@@ -1,16 +1,18 @@
 public class Draft_Whole_Video1_3_5_0 {
     public static void main(String[] args) {
         //  Урок 5. StringBuilder, обработка строк
-        //  закончил мин 39 40
+        //  закончил мин 06 31 00
 
         //  видео мин 03 38 - метод insert
         //  видео мин 05 20 - метод delete и deleteCharAt
         //  видео мин 07 59 - метод replace
         //  видео мин 08 24 - зАбОрЧиКоМ
         //  видео мин 08 44 - input
-        //  видео мин 13 45 - слова в обратном порядке
+        //  видео мин 13 38 - слова в обратном порядке
         //  видео мин 16 10 - ищем json terminator
         //  видео мин 36 40 - CTRL + ALT + M - создает новый метод
+        //  видео мин 52 25 - четыре метода StringBuilder, append, unsert, delete, deleteCharAt
+        //      (ещё replace и др.)
 
 // 1. wrapperType ->
 //  - track
