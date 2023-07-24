@@ -6,7 +6,7 @@ public class Draft_Task1_3_5_2 {
                 "\nбудут в обратном порядке\n\nРешение: ");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Вводите три слова разделяя клавишей enter: ");
+        System.out.println("Введите три слова разделяя клавишей 'пробел' или 'enter': ");
         StringBuilder builder = new StringBuilder(/*scanner.nextLine()*/);
 
         for (int i = 0; i < 3; i++) {
