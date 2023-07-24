@@ -37,6 +37,46 @@ public class Draft_Whole_Video1_3_5_0 {
 }
 
 
+////        Пример _ ППППППППППППППППППППППППППППППППППП СДЕЛАН ОКОНЧАТЕЛЬНО, ОТПРАВЛЕН В ЭТОМ ВИДЕ !!!!!
+////  Пример взят отсюда: https://gist.github.com/ezhov-da/1544cb56555f6319f5bc25dc804700e1
+//public class Draft_Whole_Video1_3_5_0 {
+//
+//    public static void main(String[] args) {
+//        System.out.println("Задание: \n6.  Пользователь вводит число, любое. 237, например. " +
+//                "\nВыведите: 237 программистов, окончание должно зависеть от числа. 1 программист, " +
+//                "\n2 программиста, и так далее\n\nРешение: ");
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите число: ");
+//        StringBuilder builder = new StringBuilder(scanner.nextLine());
+//        System.out.println("Исходное число: " + builder);
+//
+//        int ost = Integer.parseInt(builder.toString()) % 100;
+//        int ost2 = ost % 10;
+//
+//        StringBuilder builder1 = new StringBuilder(builder + " программист");
+//        StringBuilder builder2 = new StringBuilder(builder + " программиста");
+//        StringBuilder builder3 = new StringBuilder(builder + " программистов");
+//
+//        if (ost > 9 && ost < 20) {
+//            System.out.println("Результат: " + builder3);
+//        } else {
+//            if (ost2 == 1) {
+//                System.out.println("Результат: " + builder1);
+//
+//            } else if (ost2 > 1 && ost < 5) {
+//                System.out.println("Результат: " + builder2);
+//
+//            } else {
+//                System.out.println("Результат: " + builder3);
+//
+//            }
+//        }
+//    }
+//}
+////        Конец Примера _ КККККККККККККККК
+
+
 
 
 
