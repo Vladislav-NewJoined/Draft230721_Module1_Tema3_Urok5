@@ -8,7 +8,7 @@ public class Draft_Task1_3_5_5 {
                 "\n«Учу, так сказать, Java»\n\nРешение: ");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Вводите предложение их двух слов: ");
+        System.out.print("Введите предложение их двух слов: ");
         StringBuilder builder = new StringBuilder(scanner.nextLine());
         System.out.println("Исходная строка: \"" + builder + "\"");
         StringBuilder builderNew = new StringBuilder(builder);

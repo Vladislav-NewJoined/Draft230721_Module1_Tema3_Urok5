@@ -1,6 +1,4 @@
-import java.awt.*;
-import java.io.IOException;
-import java.net.URISyntaxException;
+import java.util.Scanner;
 
 import static java.lang.Math.min;
 //import static java.lang.StringUTF16.charAt;
@@ -28,46 +26,31 @@ import static java.lang.Math.min;
 
 
 
-//        Пример 5 ППППППППППППППППППППППППППППППППППП осталось - 14 - символов
+//        Пример 8 ППППППППППППППППППППППППППППППППППП осталось - 14 - символов
+//  Пример взят отсюда: https://gist.github.com/ezhov-da/1544cb56555f6319f5bc25dc804700e1
 public class Draft_Task1_3_5_6 {
-//    private static final Logger LOG = Logger.getLogger(Draft_Task1_3_5_6.class.getName());
 
     public static void main(String[] args) {
         System.out.println("Задание: \n6.  Пользователь вводит число, любое. 237, например. " +
                 "\nВыведите: 237 программистов, окончание должно зависеть от числа. 1 программист, " +
                 "\n2 программиста, и так далее\n\nРешение: ");
 
-        String text = "%s - %s - %s";
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Введите число: ");
+        StringBuilder builder = new StringBuilder(scanner.nextLine());
+        System.out.println("Исходное число: " + builder);
 
-        for (int number = 0; number < 15; number++) {
-            System.out.println(
-                    String.format(text,
-                            getName(number, "остался", "осталось", "осталось"),
-                            number,
-                            getName(number, "пользователь", "пользователя", "пользователей"))
-            );
-        }
+        String text = "%s %s";
 
-        for (int number = 0; number < 15; number++) {
-            System.out.println(
+            System.out.println("Результат: " +
                     String.format(text,
-                            getName(number, "остался", "осталось", "осталось"),
-                            number,
-                            getName(number, "год", "года", "лет"))
+                            builder,
+                            getName(builder, "программист", "программиста", "программистов"))
             );
-        }
-
-        for (int number = 0; number < 15; number++) {
-            System.out.println(
-                    String.format(text,
-                            getName(number, "остался", "осталось", "осталось"),
-                            number,
-                            getName(number, "символ", "символа", "символов"))
-            );
-        }
     }
 
-    public static String getName(int count, String firststr, String secondstr, String thirdstr) {
+    public static String getName(StringBuilder countOrigin, String firststr, String secondstr, String thirdstr) {
+        int count = Integer.parseInt(countOrigin.toString());
         int ost = count % 100;
         if (ost > 9 && ost < 20)
         {
@@ -87,7 +70,201 @@ public class Draft_Task1_3_5_6 {
         }
     }
 }
-//        Конец Примера 5 КККККККККККККККК
+//        Конец Примера 8 КККККККККККККККК
+
+
+
+
+
+
+
+////        Пример 7 ППППППППППППППППППППППППППППППППППП осталось - 14 - символов _ Работает БЕЗ StringBuilder
+////  Пример взят отсюда: https://gist.github.com/ezhov-da/1544cb56555f6319f5bc25dc804700e1
+//public class Draft_Task1_3_5_6 {
+//
+//    public static void main(String[] args) {
+//        System.out.println("Задание: \n6.  Пользователь вводит число, любое. 237, например. " +
+//                "\nВыведите: 237 программистов, окончание должно зависеть от числа. 1 программист, " +
+//                "\n2 программиста, и так далее\n\nРешение: ");
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите число: ");
+//        StringBuilder builder = new StringBuilder(scanner.nextLine());
+//        System.out.println("Исходное число: " + builder);
+//
+//        String text = "%s %s";
+//
+//            System.out.println("Результат: " +
+//                    String.format(text,
+//                            builder,
+//                            getName(builder, "программист", "программиста", "программистов"))
+//            );
+//    }
+//
+//    public static String getName(StringBuilder countOrigin, String firststr, String secondstr, String thirdstr) {
+//        int count = Integer.parseInt(countOrigin.toString());
+//        int ost = count % 100;
+//        if (ost > 9 && ost < 20)
+//        {
+//            return thirdstr;
+//        } else {
+//            ost = ost % 10;
+//            if (ost == 1)
+//            {
+//                return firststr;
+//            } else if (ost > 1 && ost < 5)
+//            {
+//                return secondstr;
+//            } else
+//            {
+//                return thirdstr;
+//            }
+//        }
+//    }
+//}
+////        Конец Примера 7 КККККККККККККККК
+
+
+
+
+
+
+
+////        Пример 6 ППППППППППППППППППППППППППППППППППП осталось - 14 - символов
+//public class Draft_Task1_3_5_6 {
+////    private static final Logger LOG = Logger.getLogger(Draft_Task1_3_5_6.class.getName());
+//
+//    public static void main(String[] args) {
+//        System.out.println("Задание: \n6.  Пользователь вводит число, любое. 237, например. " +
+//                "\nВыведите: 237 программистов, окончание должно зависеть от числа. 1 программист, " +
+//                "\n2 программиста, и так далее\n\nРешение: ");
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите число: ");
+//        StringBuilder builder = new StringBuilder(scanner.nextLine());
+//        System.out.println("Исходное число: \"" + builder + "\"");
+//
+//
+////        int builder = 0;
+//
+//        String text = "%s %s";
+//
+////        for (int builder = 0; builder < 15; builder++) {
+////            System.out.println(
+////                    String.format(text,
+////                            getName(builder, "остался", "осталось", "осталось"),
+////                            builder,
+////                            getName(builder, "пользователь", "пользователя", "пользователей"))
+////            );
+////        }
+//
+////        for (int builder = 0; builder < 15; builder++) {
+////            System.out.println(
+////                    String.format(text,
+////                            getName(builder, "остался", "осталось", "осталось"),
+////                            builder,
+////                            getName(builder, "год", "года", "лет"))
+////            );
+////        }
+//
+//            System.out.println(
+//                    String.format(text,
+////                            getName(builder, "остался", "осталось", "осталось"),
+//                            builder,
+//                            getName(builder, "программист", "программиста", "программистов"))
+//            );
+//    }
+//
+//    public static String getName(StringBuilder countOrigin, String firststr, String secondstr, String thirdstr) {
+//        String singleString2 = countOrigin.toString();
+//        int count = Integer.parseInt(singleString2);
+//        int ost = count % 100;
+//        if (ost > 9 && ost < 20)
+//        {
+//            return thirdstr;
+//        } else {
+//            ost = ost % 10;
+//            if (ost == 1)
+//            {
+//                return firststr;
+//            } else if (ost > 1 && ost < 5)
+//            {
+//                return secondstr;
+//            } else
+//            {
+//                return thirdstr;
+//            }
+//        }
+//    }
+//}
+////        Конец Примера 6 КККККККККККККККК
+
+
+
+
+
+
+
+////        Пример 5 ППППППППППППППППППППППППППППППППППП осталось - 14 - символов _ ОРИГИНАЛ
+//public class Draft_Task1_3_5_6 {
+////    private static final Logger LOG = Logger.getLogger(Draft_Task1_3_5_6.class.getName());
+//
+//    public static void main(String[] args) {
+//        System.out.println("Задание: \n6.  Пользователь вводит число, любое. 237, например. " +
+//                "\nВыведите: 237 программистов, окончание должно зависеть от числа. 1 программист, " +
+//                "\n2 программиста, и так далее\n\nРешение: ");
+//
+//        String text = "%s - %s - %s";
+//
+//        for (int number = 0; number < 15; number++) {
+//            System.out.println(
+//                    String.format(text,
+//                            getName(number, "остался", "осталось", "осталось"),
+//                            number,
+//                            getName(number, "пользователь", "пользователя", "пользователей"))
+//            );
+//        }
+//
+//        for (int number = 0; number < 15; number++) {
+//            System.out.println(
+//                    String.format(text,
+//                            getName(number, "остался", "осталось", "осталось"),
+//                            number,
+//                            getName(number, "год", "года", "лет"))
+//            );
+//        }
+//
+//        for (int number = 0; number < 15; number++) {
+//            System.out.println(
+//                    String.format(text,
+//                            getName(number, "остался", "осталось", "осталось"),
+//                            number,
+//                            getName(number, "символ", "символа", "символов"))
+//            );
+//        }
+//    }
+//
+//    public static String getName(int count, String firststr, String secondstr, String thirdstr) {
+//        int ost = count % 100;
+//        if (ost > 9 && ost < 20)
+//        {
+//            return thirdstr;
+//        } else {
+//            ost = ost % 10;
+//            if (ost == 1)
+//            {
+//                return firststr;
+//            } else if (ost > 1 && ost < 5)
+//            {
+//                return secondstr;
+//            } else
+//            {
+//                return thirdstr;
+//            }
+//        }
+//    }
+//}
+////        Конец Примера 5 КККККККККККККККК
 
 
 
