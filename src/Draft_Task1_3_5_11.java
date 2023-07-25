@@ -11,6 +11,7 @@ public class Draft_Task1_3_5_11 {
                 "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
                 "\nсоздайте экземпляр класса.\n\nРешение: ");
 
+        System.out.println("Создаем строку с тремя переменными: 'String str1, str2, str3;'");
         System.out.println("Создаем три экземпляра класса FileInformation: ");
 
 //        Scanner scanner = new Scanner(System.in);
