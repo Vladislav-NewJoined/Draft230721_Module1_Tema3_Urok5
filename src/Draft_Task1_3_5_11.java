@@ -1,28 +1,34 @@
 import java.lang.reflect.*;
-import java.util.Scanner;
-
-import static sun.awt.image.PixelConverter.UshortGray.instance;
 
 //        Пример _ ППППППППППППППППППППППППППППППППППП
 //  Пример взят отсюда: https://www.sourcetrail.com/ru/java/java-get-class-by-string/
+
+//  Создание класса и объекта Гоша Дударь: https://www.youtube.com/watch?v=_GLnOwDEE_A&list=PL0lO_mIqDDFW2xXiWSfjT7hEdOUZHVNbK&index=13
+//  Создание класса и объекта selfedu: https://www.youtube.com/watch?v=eL4tJFvaH2g
 public class Draft_Task1_3_5_11 {
     public static void main(String[] args) {
-        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation2, " +
+        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
                 "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
                 "\nсоздайте экземпляр класса.\n\nРешение: ");
+
+        System.out.println("Создаем три экземпляра класса FileInformation: ");
 
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.print("Пользователь, введите три переменных: ");
 
-//        System.out.print("Введите второе слово в качестве строкового поля классв FileInformation2: ");
+//        System.out.print("Введите второе слово в качестве строкового поля классв FileInformation: ");
 //        String word = scanner.next();
 
 
 //        String inputStr = scanner.nextLine();
 //        System.out.println("Исходные три переменных String: " + inputStr);
 
-        CreateInstanceFromString createInstanceFromString = new CreateInstanceFromString();
-        createInstanceFromString.cif();
+        FileInformation createIFS;
+//        createIFS.cif = new FileInformation();
+        createIFS = new FileInformation();
+        createIFS.fileInfo1();
+        createIFS.fileInfo2();
+        createIFS.fileInfo3();
 
 //        try {
 //            String className = "java.util.ArrayList";
@@ -37,27 +43,53 @@ public class Draft_Task1_3_5_11 {
     }
 }
 
-class CreateInstanceFromString {
-    static void cif() {
+class FileInformation {
+    static void fileInfo1() {
         // Как пример, вводим три переменных
         String str1, str2, str3;
 
         str1 = "Объект 1";
-        str2 = "Объект 2";
-        str3 = "Объект 3";
         try {
             String className = "java.util.ArrayList";
             Class<?> clazz = Class.forName(className);
             Object instance1 = clazz.getDeclaredConstructor().newInstance();
-            Object instance2 = clazz.getDeclaredConstructor().newInstance();
-            Object instance3 = clazz.getDeclaredConstructor().newInstance();
             Method addMethod1 = clazz.getMethod("add", Object.class);
-            Method addMethod2 = clazz.getMethod("add", Object.class);
-            Method addMethod3 = clazz.getMethod("add", Object.class);
             addMethod1.invoke(instance1, "Экземпляр класса 1");
             System.out.println("Instance1: " + instance1);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void fileInfo2() {
+        // Как пример, вводим три переменных
+        String str1, str2, str3;
+
+        str2 = "Объект 2";
+        try {
+            String className = "java.util.ArrayList";
+            Class<?> clazz = Class.forName(className);
+            Object instance2 = clazz.getDeclaredConstructor().newInstance();
+            Method addMethod2 = clazz.getMethod("add", Object.class);
             addMethod2.invoke(instance2, "Экземпляр класса 2");
             System.out.println("Instance2: " + instance2);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    static void fileInfo3() {
+        // Как пример, вводим три переменных
+        String str1, str2, str3;
+
+        str3 = "Объект 3";
+        try {
+            String className = "java.util.ArrayList";
+            Class<?> clazz = Class.forName(className);
+            Object instance3 = clazz.getDeclaredConstructor().newInstance();
+            Method addMethod3 = clazz.getMethod("add", Object.class);
             addMethod3.invoke(instance3, "Экземпляр класса 3");
             System.out.println("Instance3: " + instance3);
 
@@ -65,6 +97,7 @@ class CreateInstanceFromString {
             e.printStackTrace();
         }
     }
+
 }
 //        Конец Примера _ КККККККККККККККК
 
@@ -79,21 +112,21 @@ class CreateInstanceFromString {
 ////  Пример взят отсюда: https://www.sourcetrail.com/ru/java/java-get-class-by-string/
 //public class Draft_Task1_3_5_11 {
 //    public static void main(String[] args) {
-//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation2, " +
+//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
 //                "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
 //                "\nсоздайте экземпляр класса.\n\nРешение: ");
 //
 ////        Scanner scanner = new Scanner(System.in);
 ////        System.out.print("Пользователь, введите три переменных: ");
 //
-////        System.out.print("Введите второе слово в качестве строкового поля классв FileInformation2: ");
+////        System.out.print("Введите второе слово в качестве строкового поля классв FileInformation: ");
 ////        String word = scanner.next();
 //
 //
 ////        String inputStr = scanner.nextLine();
 ////        System.out.println("Исходные три переменных String: " + inputStr);
 //
-//        CreateInstanceFromString createInstanceFromString = new CreateInstanceFromString();
+//        FileInformation createInstanceFromString = new FileInformation();
 //        createInstanceFromString.cif();
 //
 ////        try {
@@ -109,7 +142,7 @@ class CreateInstanceFromString {
 //    }
 //}
 //
-//class CreateInstanceFromString {
+//class FileInformation {
 //    static void cif() {
 //        // Как пример, вводим три переменных
 //        String str1, str2, str3;
@@ -151,13 +184,13 @@ class CreateInstanceFromString {
 ////  Пример взят отсюда: https://www.sourcetrail.com/ru/java/java-get-class-by-string/
 //public class Draft_Task1_3_5_11 {
 //    public static void main(String[] args) {
-//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation2, " +
+//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
 //                "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
 //                "\nсоздайте экземпляр класса.\n\nРешение: ");
 //
 //        Scanner scanner = new Scanner(System.in);
 //        System.out.print("Пользователь, введите три переменных: ");
-////        System.out.print("Введите второе слово в качестве строкового поля классв FileInformation2: ");
+////        System.out.print("Введите второе слово в качестве строкового поля классв FileInformation: ");
 ////        String word = scanner.next();
 //
 //        // Как пример, вводим три этих переменных
@@ -171,7 +204,7 @@ class CreateInstanceFromString {
 ////        String inputStr = scanner.nextLine();
 ////        System.out.println("Исходные три переменных String: " + inputStr);
 //
-//        CreateInstanceFromString createInstanceFromString = new CreateInstanceFromString();
+//        FileInformation createInstanceFromString = new FileInformation();
 //        createInstanceFromString.cif();
 //        try {
 //            String className = "java.util.ArrayList";
@@ -186,7 +219,7 @@ class CreateInstanceFromString {
 //    }
 //}
 //
-//class CreateInstanceFromString {
+//class FileInformation {
 //    static void cif() {
 //        try {
 //            String className = "java.util.ArrayList";
@@ -240,7 +273,7 @@ class CreateInstanceFromString {
 ////        Пример 4 ППППППППППППППППППППППППППППППППППП Брать как исходный пример
 //public class Draft_Task1_3_5_11 {
 //    public static void main(String[] args) {
-//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation2, " +
+//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
 //                "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
 //                "\nсоздайте экземпляр класса.\n\nРешение: ");
 //
@@ -252,7 +285,7 @@ class CreateInstanceFromString {
 
 
 ////        Пример 3 ППППППППППППППППППППППППППППППППППП
-////  Пример с классом FileInformation2 взят отсюда:
+////  Пример с классом FileInformation взят отсюда:
 ////  видео мин 16 57  Урок 1. Введение в классы. Поля класса. Процедурное программирование, ООП,
 ////  организация кода Module1_Tema3_Urok1
 ////  Пример взят отсюда: https://translated.turbopages.org/proxy_u/en-ru.ru.0f86aada-64bec5b6-871675d6-74722d776562/https/stackoverflow.com/questions/19796730/java-how-to-create-a-class-instance-from-user-input
@@ -407,7 +440,7 @@ class CreateInstanceFromString {
 //    }
 //
 //    public static void main(String[] args) {
-//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation2, " +
+//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
 //                "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
 //                "\nсоздайте экземпляр класса.\n\nРешение: ");
 //
@@ -432,7 +465,7 @@ class CreateInstanceFromString {
 
 
 ////        Пример 2 ППППППППППППППППППППППППППППППППППП
-////  Пример с классом FileInformation2 взят отсюда:
+////  Пример с классом FileInformation взят отсюда:
 ////  видео мин 16 57  Урок 1. Введение в классы. Поля класса. Процедурное программирование, ООП,
 ////  организация кода Module1_Tema3_Urok1
 ////  Пример взят отсюда: https://translated.turbopages.org/proxy_u/en-ru.ru.0f86aada-64bec5b6-871675d6-74722d776562/https/stackoverflow.com/questions/19796730/java-how-to-create-a-class-instance-from-user-input
@@ -440,7 +473,7 @@ class CreateInstanceFromString {
 //
 //public class Draft_Task1_3_5_11 {
 //    public static void main(String[] args) {
-//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation2, " +
+//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
 //                "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
 //                "\nсоздайте экземпляр класса.\n\nРешение: ");
 //
@@ -468,7 +501,7 @@ class CreateInstanceFromString {
 
 
 ////        Пример 1 ППППППППППППППППППППППППППППППППППП
-////  Пример с классом FileInformation2 взят отсюда:
+////  Пример с классом FileInformation взят отсюда:
 ////  видео мин 16 57  Урок 1. Введение в классы. Поля класса. Процедурное программирование, ООП,
 ////  организация кода Module1_Tema3_Urok1
 ////  Пример взят отсюда: https://translated.turbopages.org/proxy_u/en-ru.ru.0f86aada-64bec5b6-871675d6-74722d776562/https/stackoverflow.com/questions/19796730/java-how-to-create-a-class-instance-from-user-input
@@ -476,7 +509,7 @@ class CreateInstanceFromString {
 //
 //public class Draft_Task1_3_5_11 {
 //    public static void main(String[] args) {
-//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation2, " +
+//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
 //                "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
 //                "\nсоздайте экземпляр класса.\n\nРешение: ");
 //
@@ -486,7 +519,7 @@ class CreateInstanceFromString {
 ////        long size = file.length();
 //
 //        // видео мин 18 12 Так у нас объявляется экземпляр класса
-//        FileInformation2 info2 = new FileInformation2();
+//        FileInformation info2 = new FileInformation();
 //        // видео мин 19 15 Теперь мы можем уже обращться к полям:
 //        info2.absolutePath = file.getAbsolutePath();
 //        info2.fileName = file.getName();
@@ -495,7 +528,7 @@ class CreateInstanceFromString {
 //
 //
 ////        Scanner scanner = new Scanner(System.in);
-////        System.out.println("Введите поля класса FileInformation2 в одну строку: ");
+////        System.out.println("Введите поля класса FileInformation в одну строку: ");
 ////        StringBuilder builder = new StringBuilder(scanner.nextLine());
 ////
 ////        String resultString = builder.toString();
