@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-//        Пример _ ППППППППППППППППППППППППППППППППППП
+//        Пример _ ППППППППППППППППППППППППППППППППППП  Test 230726
 //  Пример взят отсюда: https://gb.ru/posts/java_ticktacktoe_game
 public class Draft_Task1_3_5_10_2 {
     final char SIGN_X = 'x';
