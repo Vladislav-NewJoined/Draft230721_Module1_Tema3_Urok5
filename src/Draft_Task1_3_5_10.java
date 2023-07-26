@@ -75,8 +75,6 @@ public class Draft_Task1_3_5_10 {
 
         }
     }
-
-
     public static void printBoard(char [][] gameBoard){
 
         for(char[] row : gameBoard){
@@ -86,8 +84,6 @@ public class Draft_Task1_3_5_10 {
             System.out.println();
         }
     }
-
-
     public static void updateBoard( int position, int player, char [][] gameBoard){
 
         char character;
@@ -138,16 +134,11 @@ public class Draft_Task1_3_5_10 {
                 break;
             default:
                 break;
-
         }
-
     }
-
-
     public static void playerMove(char[][] gameBoard){
 
         System.out.println("Please make a move. (1-9)");
-
 
         int move = input.nextInt();
 
@@ -161,11 +152,7 @@ public class Draft_Task1_3_5_10 {
 
         System.out.println("Player moved at position " + move);
         updateBoard(move,1,gameBoard);
-
-
     }
-
-
     public static boolean isValidMove(int move, char[][] gameboard){
 
         switch (move){
@@ -246,8 +233,6 @@ public class Draft_Task1_3_5_10 {
         System.out.println("Computer moved at position "+ move);
         updateBoard(move,2,gameBoard);
     }
-
-
     public static boolean isGameOver(char [][] gameboard){
 
         //Horizontal Win
@@ -345,10 +330,6 @@ public class Draft_Task1_3_5_10 {
             System.out.println("Its a tie");
             return true;
         }
-
-
-
-
         return false;}
 
     public static void resetBoard(char [][] gameBoard){
