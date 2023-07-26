@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-//        Пример _ ППППППППППППППППППППППППППППППППППП
+//        Пример _ ППППППППППППППППППППППППППППППППППП СДЕЛАН ОКОНЧАТЕЛЬНО, ОТПРАВЛЕН В ЭТОМ ВИДЕ !!!!!
 //  Пример взят отсюда: https://www.sourcetrail.com/ru/java/java-get-class-by-string/
 
 //  Создание класса и объекта Гоша Дударь: https://www.youtube.com/watch?v=_GLnOwDEE_A&list=PL0lO_mIqDDFW2xXiWSfjT7hEdOUZHVNbK&index=13
