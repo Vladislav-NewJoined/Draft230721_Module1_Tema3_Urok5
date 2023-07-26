@@ -37,6 +37,61 @@ public class Draft_Whole_Video1_3_5_0 {
 }
 
 
+//import java.util.Scanner;
+//
+////        Пример _ ППППППППППППППППППППППППППППППППППП СДЕЛАН ОКОНЧАТЕЛЬНО, ОТПРАВЛЕН В ЭТОМ ВИДЕ !!!!!
+////  Пример взят отсюда: https://www.sourcetrail.com/ru/java/java-get-class-by-string/
+//
+////  Создание класса и объекта Гоша Дударь: https://www.youtube.com/watch?v=_GLnOwDEE_A&list=PL0lO_mIqDDFW2xXiWSfjT7hEdOUZHVNbK&index=13
+////  Создание класса и объекта selfedu: https://www.youtube.com/watch?v=eL4tJFvaH2g
+////  Здесь видео мин 08 38 ВАЖНО! Как sout в качестве объекта класса в main класс вывести
+////  https://www.youtube.com/watch?v=_GLnOwDEE_A&list=PL0lO_mIqDDFW2xXiWSfjT7hEdOUZHVNbK&index=14
+//public class Draft_Task1_3_5_11 {
+//    public static void main(String[] args) {
+//        System.out.println("Задание: \n11.  Пусть пользователь вводит поля класса FileInformation, " +
+//                "\nно в одну строку; формат придумайте сами. Считайте ввод пользователя и из него " +
+//                "\nсоздайте экземпляр класса.\n\nРешение: ");
+//
+//        FileInformation scanStrings;
+//        scanStrings = new FileInformation();
+//        scanStrings.getScanner();
+//        FileInformation getObjects;
+//        getObjects = new FileInformation();
+//        getObjects.getInstances();
+//
+//    }
+//}
+//
+//class FileInformation {
+//    public static Scanner getScanner() {
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите через пробел, в качестве переменных (или полей класса) String, три слова, например " +
+//                "\"Один\", \"Два\", \"Три\", \nзакончите ввод нажатием клавиши Enter: ");
+//        String str1 = scanner.next();
+//        String str2 = scanner.next();
+//        String str3 = scanner.next();
+//
+//        getInstances(str1, str2, str3);
+//        return scanner;
+//    }
+//    public static void getInstances(String str1, String str2, String str3) {
+//        System.out.println();
+//        System.out.println("Используя три введенных переменных, создаем экземпляр класса FileInformation и " +
+//                "обращаемся к этим трём переменным, \nимя экземпляра класса \"getInstances\": ");
+//        String object1 = str1;
+//        String object2 = str2;
+//        String object3 = str3;
+//        System.out.println("Экземпляр класса 1: " + object1 + "\nЭкземпляр класса 2: " + object2 +
+//                "\nЭкземпляр класса 3: " + object3);
+//    }
+//
+//    public void getInstances() {
+//    }
+//}
+////        Конец Примера _ КККККККККККККККК
+//
+
+
 ////        Пример _ ППППППППППППППППППППППППППППППППППП СДЕЛАН ОКОНЧАТЕЛЬНО, ОТПРАВЛЕН В ЭТОМ ВИДЕ !!!!!
 ////  Пример взят отсюда: https://gist.github.com/ezhov-da/1544cb56555f6319f5bc25dc804700e1
 //public class Draft_Whole_Video1_3_5_0 {
