@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 //        Пример _ ППППППППППППППППППППППППППППППППППП
 //  Пример взят отсюда: https://github.com/Taylor-McNeil/YouTubeTutorials-/blob/master/TicTacToe.java
+//  В текстовом файле строка 55
 public class Draft_Task1_3_5_10 {
 
     static int playerScore = 0;
