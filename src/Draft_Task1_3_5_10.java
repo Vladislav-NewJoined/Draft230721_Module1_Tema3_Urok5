@@ -36,7 +36,8 @@ public class Draft_Task1_3_5_10 {
 
         while(playAgain) {
             while (!gameOver) {
-                System.out.println("Welcome to Tic Tac Toe!!");
+                StringBuilder welcome = new StringBuilder("Добро пожаловать!");
+                System.out.println(welcome.toString());
                 playerMove(gameBoard);
                 gameOver = isGameOver(gameBoard);
                 if (gameOver) {
@@ -49,9 +50,12 @@ public class Draft_Task1_3_5_10 {
                     break;
                 }
             }
-            System.out.println("Player Score: " +playerScore);
-            System.out.println("Computer Score: "+ computerScore);
-            System.out.println("Would you like to play again? Y/N");
+            StringBuilder printPlayerScore = new StringBuilder("Счет игрока: ");
+            System.out.println(printPlayerScore.toString() + playerScore);
+            StringBuilder printComputerScore = new StringBuilder("Счет компьютера: ");
+            System.out.println(printComputerScore.toString() + computerScore);
+            StringBuilder offerPlayAgain = new StringBuilder("Хотите сыграть ещё раз? Клавиши Y/N");
+            System.out.println(offerPlayAgain.toString());
             input.nextLine();
             String result = input.nextLine();
 
@@ -59,7 +63,8 @@ public class Draft_Task1_3_5_10 {
                 case "Y":
                 case "y":
                     playAgain = true;
-                    System.out.println("Dope! Let's play again");
+                    StringBuilder beginPlayAgain = new StringBuilder("ОК! Начинаем новую игру");
+                    System.out.println(beginPlayAgain.toString());
                     resetBoard(gameBoard);
                     gameOver = false;
                     printBoard(gameBoard);
@@ -68,7 +73,8 @@ public class Draft_Task1_3_5_10 {
                 case "N":
                 case "n":
                     playAgain = false;
-                    System.out.println("Thanks for playing");
+                    StringBuilder thanks = new StringBuilder("Спасибо за игру");
+                    System.out.println(thanks.toString());
                     break;
                 default:
                     break;
@@ -140,19 +146,20 @@ public class Draft_Task1_3_5_10 {
     public static void playerMove(char[][] gameBoard){
 
         StringBuilder playersMove = new StringBuilder("Пожалуйста, сделайте Ваш ход (клавиши 1-9): ");
-        System.out.print(playersMove.toString());
+        System.out.println(playersMove.toString());
 
         int move = input.nextInt();
 
         boolean result = isValidMove(move,gameBoard);
 
         while(!result){
-            System.out.println("Sorry! Invalid Move. Try again");
+            StringBuilder invalidMove = new StringBuilder("Некорректный ввод. Повторите попытку");
+            System.out.println(invalidMove.toString());
             move = input.nextInt();
             result = isValidMove(move,gameBoard);
         }
-
-        System.out.println("Player moved at position " + move);
+        StringBuilder playersMoved = new StringBuilder("Вы сделали ход на позиции ");
+        System.out.println(playersMoved.toString() + move);
         updateBoard(move,1,gameBoard);
     }
     public static boolean isValidMove(int move, char[][] gameboard){
@@ -232,104 +239,122 @@ public class Draft_Task1_3_5_10 {
             result = isValidMove(move, gameBoard);
         }
 
-        System.out.println("Computer moved at position "+ move);
+        StringBuilder compMoved = new StringBuilder("Компьютер сделал ход на позиции ");
+        System.out.println(compMoved.toString() + move);
         updateBoard(move,2,gameBoard);
     }
     public static boolean isGameOver(char [][] gameboard){
 
         //Horizontal Win
         if(gameboard[0][0] == 'X'&& gameboard[0][2] == 'X' && gameboard [0][4] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
             playerScore++;
             return true;
         }
         if(gameboard[0][0] == 'O'&& gameboard[0][2] == 'O' && gameboard [0][4] == 'O' ){
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
         if(gameboard[1][0] == 'X'&& gameboard[1][2] == 'X' && gameboard [1][4] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
+//            System.out.println("Player Wins");
             playerScore++;
             return true;
         }
         if(gameboard[1][0] == 'O'&& gameboard[1][2] == 'O' && gameboard [1][4] == 'O' ){
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
         if(gameboard[2][0] == 'X'&& gameboard[2][2] == 'X' && gameboard [2][4] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
             playerScore++;
             return true;
         }
         if(gameboard[2][0] == 'O'&& gameboard[2][2] == 'O' && gameboard [2][4] == 'O' ) {
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
 
         //Vertical Wins
-
         if(gameboard[0][0] == 'X'&& gameboard[1][0] == 'X' && gameboard [2][0] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
             playerScore++;
             return true;
         }
         if(gameboard[0][0] == 'O'&& gameboard[1][0] == 'O' && gameboard [2][0] == 'O' ){
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
 
         if(gameboard[0][2] == 'X'&& gameboard[1][2] == 'X' && gameboard [2][2] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
             playerScore++;
             return true;
         }
         if(gameboard[0][2] == 'O'&& gameboard[1][2] == 'O' && gameboard [2][2] == 'O' ){
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
 
         if(gameboard[0][4] == 'X'&& gameboard[1][4] == 'X' && gameboard [2][4] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
             playerScore++;
             return true;
         }
         if(gameboard[0][4] == 'O'&& gameboard[1][4] == 'O' && gameboard [2][4] == 'O' ){
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
 
         //Diagonal Wins
         if(gameboard[0][0] == 'X'&& gameboard[1][2] == 'X' && gameboard [2][4] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
             playerScore++;
             return true;
         }
         if(gameboard[0][0] == 'O'&& gameboard[1][2] == 'O' && gameboard [2][4] == 'O' ){
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
 
         if(gameboard[2][0] == 'X'&& gameboard[1][2] == 'X' && gameboard [0][4] == 'X' ){
-            System.out.println("Player Wins");
+            StringBuilder playerWins = new StringBuilder("Вы победили");
+            System.out.println(playerWins.toString());
             playerScore++;
             return true;
         }
         if(gameboard[2][0] == 'O'&& gameboard[1][2] == 'O' && gameboard [0][4] == 'O' ){
-            System.out.println("Computer Wins");
+            StringBuilder compWins = new StringBuilder("Компьютер победил");
+            System.out.println(compWins.toString());
             computerScore++;
             return true;
         }
 
         if(gameboard[0][0] != '_' && gameboard[0][2] != '_' && gameboard[0][4] != '_' && gameboard[1][0] !='_'&&
                 gameboard[1][2] != '_' && gameboard[1][4] != '_' && gameboard[2][0] != ' ' && gameboard[2][2] != ' ' && gameboard[2][4] != ' '){
-            System.out.println("Its a tie");
+            StringBuilder tie = new StringBuilder("Ничья");
+            System.out.println(tie.toString());
             return true;
         }
         return false;}
