@@ -1,7 +1,6 @@
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.Arrays;
 
 ////        Пример _ ППППППППППППППППППППППППППППППППППП
 //public class Draft_Task1_3_5_9 {
@@ -62,37 +61,21 @@ public class Draft_Task1_3_5_9 {
         String str = quoteStrBuild.toString();
         String[] arr = str.split(" ");
         for (int i = 0; i < arr.length; i++) {
-//        for ( String ss : arr) {
             String ssOrigin = arr[i];
             String ss = arr[i];
 
             if (ssOrigin.equals("not")) {
                 arr[i] = "***";
-//                ss = arr[i];
             }
             ss = arr[i];
 
             if (ssOrigin.equals("Skyler.")) {
                 arr[i] = "******.";
-//                ss = arr[i];
             }
             ss = arr[i];
             System.out.print(ss + " ");
         }
         System.out.println(); //  перенос строки
-//        System.out.println(Arrays.toString(arr));
-
-
-
-//        String s = "I want to walk my dog";
-//        String[] arrTest = s.split(" ");
-//        for (int i = 0; i < arrTest.length; i++) {
-////        for ( String ss : arr) {
-//            String ss = arrTest[i];
-//            System.out.print(ss + " ");
-//        }
-//        System.out.println(); //  перенос строки
-//        System.out.println(Arrays.toString(arrTest));
     }
 
     private static String downloadWebPage(String url) throws IOException {
