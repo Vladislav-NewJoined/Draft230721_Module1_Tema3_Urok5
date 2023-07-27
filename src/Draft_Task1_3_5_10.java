@@ -28,7 +28,7 @@ public class Draft_Task1_3_5_10 {
  */
 
     public static void main(String [] args){
-
+        System.out.println("Задание : \n10. Напишите крестики-нолики, используя StringBuilder\n\nРешение: ");
         char [][] gameBoard = {{'_','|','_','|','_'},{'_', '|', '_','|','_'},{' ','|',' ','|',' '}};
         printBoard(gameBoard);
         boolean gameOver = false;
