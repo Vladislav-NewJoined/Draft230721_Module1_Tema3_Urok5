@@ -74,7 +74,7 @@ public class Draft_Task1_3_5_9 {
             if (ssOrigin.equals("Skyler.")) {
                 arr[i] = "*******";
             }
-
+            ss = arr[i];
             System.out.print(ss + " ");
         }
         System.out.println(); //  перенос строки
