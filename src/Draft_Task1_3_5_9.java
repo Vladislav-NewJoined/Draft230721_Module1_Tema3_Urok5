@@ -47,7 +47,7 @@ public class Draft_Task1_3_5_9 {
         int signatureEnd = page.indexOf("</cite>");
 
         System.out.println("Создаем класс QuotesPage (в этой области кода, ниже) с полями 'Цитата' и 'Подпись', " +
-                "используем его для сохранения цитаты и подписи.");
+                "используем его для печати цитаты и подписи.");
         System.out.println("Исходная цитата с подписью: ");
 
         QuotesPage quotesPage = new QuotesPage();
@@ -68,29 +68,31 @@ public class Draft_Task1_3_5_9 {
 
             if (ssOrigin.equals("not")) {
                 arr[i] = "***";
-                ss = arr[i];
+//                ss = arr[i];
             }
+            ss = arr[i];
 
             if (ssOrigin.equals("Skyler.")) {
-                arr[i] = "*******";
+                arr[i] = "******.";
+//                ss = arr[i];
             }
             ss = arr[i];
             System.out.print(ss + " ");
         }
         System.out.println(); //  перенос строки
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
 
 
 
-        String s = "I want to walk my dog";
-        String[] arrTest = s.split(" ");
-        for (int i = 0; i < arrTest.length; i++) {
-//        for ( String ss : arr) {
-            String ss = arrTest[i];
-            System.out.print(ss + " ");
-        }
-        System.out.println(); //  перенос строки
-        System.out.println(Arrays.toString(arrTest));
+//        String s = "I want to walk my dog";
+//        String[] arrTest = s.split(" ");
+//        for (int i = 0; i < arrTest.length; i++) {
+////        for ( String ss : arr) {
+//            String ss = arrTest[i];
+//            System.out.print(ss + " ");
+//        }
+//        System.out.println(); //  перенос строки
+//        System.out.println(Arrays.toString(arrTest));
     }
 
     private static String downloadWebPage(String url) throws IOException {
