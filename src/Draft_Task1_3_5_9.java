@@ -63,7 +63,18 @@ public class Draft_Task1_3_5_9 {
         String[] arr = str.split(" ");
         for (int i = 0; i < arr.length; i++) {
 //        for ( String ss : arr) {
+            String ssOrigin = arr[i];
             String ss = arr[i];
+
+            if (ssOrigin.equals("not")) {
+                arr[i] = "***";
+                ss = arr[i];
+            }
+
+            if (ssOrigin.equals("Skyler.")) {
+                arr[i] = "*******";
+            }
+
             System.out.print(ss + " ");
         }
         System.out.println(); //  перенос строки
