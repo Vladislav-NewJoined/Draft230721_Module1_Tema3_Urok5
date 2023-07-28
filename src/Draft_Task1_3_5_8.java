@@ -4,16 +4,17 @@ import java.net.URLConnection;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.Locale;
 
 //        Пример _ ППППППППППППППППППППППППППППППППППП
 // Инфо здесь: Модуль 1, Тема 1, Урок 6. Как найти анализ курса валют за определенную дату. Урок 6 Видео мин 0.44.56
 // https://lms.synergy.ru/student/updiscipline/4474947/1045153/1/1
 public class Draft_Task1_3_5_8 {
 // Надо, чтобы дата была: 12/11/2021
-
     public static void main(String[] args) throws IOException, ParseException {
         System.out.println("Задание: \n8. Вернитесь к программе, которая запрашивает курс валют. Напишите " +
                 "генератор даты для запроса к апи, на основе даты, \nвведенной пользователем. " +
@@ -33,6 +34,19 @@ public class Draft_Task1_3_5_8 {
         String newstring2 = new SimpleDateFormat("dd/MM/yyyy").format(date);
         System.out.println("Стало: " + newstring2); // 18/01/2011
 
+
+
+    }
+
+
+    private static String parseDate(String textDate){
+        String[] split = textDate.split("\\.|\\-|\\/");
+        Integer year = Integer.valueOf(split[2].trim());
+        if (year > 20 && year<1900) year = 1900 + year;
+        else if (year < 20) year = 2000 + year;
+        LocalDate parse =LocalDate.of(year, Integer.valueOf(split[1].trim()), Integer.valueOf(split[0].trim()));
+        return parse.format(DateTimeFormatter.ofPattern("MMMM dd, yyyy", Locale.ENGLISH));
+//        System.out.println(parse.format(DateTimeFormatter.ofPattern("MMMM dd, yyyy", Locale.ENGLISH)));
     }
 }
 //        Конец Примера _ ККККККККККККККК
