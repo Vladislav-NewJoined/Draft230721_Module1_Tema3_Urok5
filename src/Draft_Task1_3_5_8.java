@@ -33,20 +33,6 @@ public class Draft_Task1_3_5_8 {
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(oldstring2);
         String newstring2 = new SimpleDateFormat("dd/MM/yyyy").format(date);
         System.out.println("Стало: " + newstring2); // 18/01/2011
-
-
-
-    }
-
-
-    private static String parseDate(String textDate){
-        String[] split = textDate.split("\\.|\\-|\\/");
-        Integer year = Integer.valueOf(split[2].trim());
-        if (year > 20 && year<1900) year = 1900 + year;
-        else if (year < 20) year = 2000 + year;
-        LocalDate parse =LocalDate.of(year, Integer.valueOf(split[1].trim()), Integer.valueOf(split[0].trim()));
-        return parse.format(DateTimeFormatter.ofPattern("MMMM dd, yyyy", Locale.ENGLISH));
-//        System.out.println(parse.format(DateTimeFormatter.ofPattern("MMMM dd, yyyy", Locale.ENGLISH)));
     }
 }
 //        Конец Примера _ ККККККККККККККК
