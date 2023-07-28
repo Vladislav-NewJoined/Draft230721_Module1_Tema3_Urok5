@@ -1,35 +1,30 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.Locale;
 import java.util.Scanner;
 
-//        Пример _ ППППППППППППППППППППППППППППППППППП  РАБОТАЕТ!!!
+//        Пример _ ППППППППППППППППППППППППППППППППППП СДЕЛАН ОКОНЧАТЕЛЬНО, ОТПРАВЛЕН В ЭТОМ ВИДЕ !!!!!
 // Инфо здесь: Модуль 1, Тема 1, Урок 6. Как найти анализ курса валют за определенную дату. Урок 6 Видео мин 0.44.56
 // https://lms.synergy.ru/student/updiscipline/4474947/1045153/1/1
 public class Draft_Task1_3_5_8 {
-// Надо, чтобы дата была: 12/11/2021
     public static void main(String[] args) throws IOException, ParseException {
         System.out.println("Задание: \n8. Вернитесь к программе, которая запрашивает курс валют. Напишите " +
                 "генератор даты для запроса к апи, на основе даты, \nвведенной пользователем. " +
-                "ИспользуйтеStringBuilder." +
+                "Используйте StringBuilder." +
                 "\n\nРешение: ");
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введите дату в формате 'yyyy-MM-dd', например, 2011-01-18: ");
         StringBuilder inputDate = new StringBuilder(scanner.nextLine());
-//        System.out.println("Исходная строка: \"" + inputDate + "\"");
         System.out.println("Исходная дата: " + inputDate);
 
         String inStr = inputDate.toString();
-//        System.out.println("Было: " + inStr);
         Date date = new SimpleDateFormat("yyyy-MM-dd").parse(inStr);
         String outStr = new SimpleDateFormat("dd/MM/yyyy").format(date);
         System.out.println("Дата, полученная в результате: " + outStr); // 18/01/2011
@@ -51,43 +46,20 @@ public class Draft_Task1_3_5_8 {
         String substring2 = inputPageStr.substring(startIndexInputPageURL2, endIndexInputPageURL2);
         System.out.println(substring2);
 
-
-
-
         StringBuilder outputPageURL1 = inputPageURL.replace(startIndexInputPageURL1, endIndexInputPageURL1, outStr);
-//        System.out.println(outputPageURL1);
         StringBuilder outputPageURLFinish = outputPageURL1.replace(startIndexInputPageURL2, endIndexInputPageURL2, outStr);
         System.out.println(outputPageURLFinish);
 
         String page = downloadWebPage(outputPageURLFinish.toString());
-//        System.out.println(page);
-        int startIndex = page.lastIndexOf("<Value>");
-        int endIndex = page.lastIndexOf("</Value>");
-//        System.out.println(startIndex);
-//        System.out.println(endIndex);
-//        System.out.println(page.substring(startIndex + 7, endIndex));
-        String courseStr = page.substring(startIndex + 7, endIndex);
-        System.out.println(courseStr);
 
-//// видео мин 0 54 10 - Теперь давайте выведем курс за два разных дня
-//        String page1 = downloadWebPage("https://cbr.ru/scripts/XML_dynamic.asp?date_req1=01/11/2021&date_req2=13/11/2021&VAL_NM_RQ=R01235");
-////        System.out.println(page);
-//        int startIndex1 = page.lastIndexOf("<Value>");
-//        int endIndex1 = page.lastIndexOf("</Value>");
-////        System.out.println(startIndex);
-////        System.out.println(endIndex);
-////        System.out.println(page.substring(startIndex + 7, endIndex));
-//        String courseStr1 = page.substring(startIndex1 + 7, endIndex1);
-//
-//        String page2 = downloadWebPage("https://cbr.ru/scripts/XML_dynamic.asp?date_req1=01/11/2020&date_req2=13/11/2020&VAL_NM_RQ=R01235");
-////        System.out.println(page);
-//        int startIndex2 = page.lastIndexOf("<Value>");
-//        int endIndex2 = page.lastIndexOf("</Value>");
-////        System.out.println(startIndex);
-////        System.out.println(endIndex);
-////        System.out.println(page.substring(startIndex + 7, endIndex));
-//        String courseStr2 = page.substring(startIndex2 + 7, endIndex2);
-
+        if (page.contains("<Value>")) {
+            int startIndex = page.lastIndexOf("<Value>");
+            int endIndex = page.lastIndexOf("</Value>");
+            String courseStr = page.substring(startIndex + 7, endIndex);
+            System.out.println(courseStr);
+        } else {
+            System.out.println("На введённую дату курс не установлен.");
+        }
     }
     private static String downloadWebPage(String url) throws IOException {
         StringBuilder result = new StringBuilder();
@@ -100,11 +72,191 @@ public class Draft_Task1_3_5_8 {
             }
         }
         return result.toString();
-
-
     }
 }
 //        Конец Примера _ ККККККККККККККК
+
+
+
+
+
+
+
+////        Пример 5 ППППППППППППППППППППППППППППППППППП
+//// Инфо здесь: Модуль 1, Тема 1, Урок 6. Как найти анализ курса валют за определенную дату. Урок 6 Видео мин 0.44.56
+//// https://lms.synergy.ru/student/updiscipline/4474947/1045153/1/1
+//public class Draft_Task1_3_5_8 {
+//// Надо, чтобы дата была: 12/11/2021
+//    public static void main(String[] args) throws IOException, ParseException {
+//        System.out.println("Задание: \n8. Вернитесь к программе, которая запрашивает курс валют. Напишите " +
+//                "генератор даты для запроса к апи, на основе даты, \nвведенной пользователем. " +
+//                "Используйте StringBuilder." +
+//                "\n\nРешение: ");
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите дату в формате 'yyyy-MM-dd', например, 2011-01-18: ");
+//        StringBuilder inputDate = new StringBuilder(scanner.nextLine());
+////        System.out.println("Исходная строка: \"" + inputDate + "\"");
+//        System.out.println("Исходная дата: " + inputDate);
+//
+//        String inStr = inputDate.toString();
+////        System.out.println("Было: " + inStr);
+//        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(inStr);
+//        String outStr = new SimpleDateFormat("dd/MM/yyyy").format(date);
+//        System.out.println("Дата, полученная в результате: " + outStr); // 18/01/2011
+//
+//        StringBuilder inputPageURL = new StringBuilder("https://cbr.ru/scripts/XML_dynamic.asp?date_req1=01/11/2021&date_req2=13/11/2021&VAL_NM_RQ=R01235");
+//        String inputPageStr = inputPageURL.toString();
+//
+//        int startIndexInputPageURL1 = inputPageURL.lastIndexOf("date_req1=") + 10;
+//        int endIndexInputPageURL1 = inputPageURL.lastIndexOf("&date_req2=");
+//        System.out.println(startIndexInputPageURL1);
+//        System.out.println(endIndexInputPageURL1);
+//        String substring1 = inputPageStr.substring(startIndexInputPageURL1, endIndexInputPageURL1);
+//        System.out.println(substring1);
+//
+//        int startIndexInputPageURL2 = inputPageURL.lastIndexOf("&date_req2=") + 11;
+//        int endIndexInputPageURL2 = inputPageURL.lastIndexOf("&VAL");
+//        System.out.println(startIndexInputPageURL2);
+//        System.out.println(endIndexInputPageURL2);
+//        String substring2 = inputPageStr.substring(startIndexInputPageURL2, endIndexInputPageURL2);
+//        System.out.println(substring2);
+//
+//        StringBuilder outputPageURL1 = inputPageURL.replace(startIndexInputPageURL1, endIndexInputPageURL1, outStr);
+////        System.out.println(outputPageURL1);
+//        StringBuilder outputPageURLFinish = outputPageURL1.replace(startIndexInputPageURL2, endIndexInputPageURL2, outStr);
+//        System.out.println(outputPageURLFinish);
+//
+//        String page = downloadWebPage(outputPageURLFinish.toString());
+//
+//        if (page.contains("<Value>")) {
+////        System.out.println(page);
+//            int startIndex = page.lastIndexOf("<Value>");
+//            int endIndex = page.lastIndexOf("</Value>");
+////        System.out.println(startIndex);
+////        System.out.println(endIndex);
+////        System.out.println(page.substring(startIndex + 7, endIndex));
+//            String courseStr = page.substring(startIndex + 7, endIndex);
+//            System.out.println(courseStr);
+//        } else {
+//            System.out.println("На введённую дату курс не установлен.");
+//        }
+//    }
+//    private static String downloadWebPage(String url) throws IOException {
+//        StringBuilder result = new StringBuilder();
+//        String line;
+//        URLConnection urlConnection = new URL(url).openConnection();
+//        try (InputStream is = urlConnection.getInputStream();
+//             BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+//            while ((line = br.readLine()) != null) {
+//                result.append(line);
+//            }
+//        }
+//        return result.toString();
+//    }
+//}
+////        Конец Примера 5 ККККККККККККККК
+
+
+
+
+
+
+
+////        Пример 4 ППППППППППППППППППППППППППППППППППП  РАБОТАЕТ!!!
+//// Инфо здесь: Модуль 1, Тема 1, Урок 6. Как найти анализ курса валют за определенную дату. Урок 6 Видео мин 0.44.56
+//// https://lms.synergy.ru/student/updiscipline/4474947/1045153/1/1
+//public class Draft_Task1_3_5_8 {
+//// Надо, чтобы дата была: 12/11/2021
+//    public static void main(String[] args) throws IOException, ParseException {
+//        System.out.println("Задание: \n8. Вернитесь к программе, которая запрашивает курс валют. Напишите " +
+//                "генератор даты для запроса к апи, на основе даты, \nвведенной пользователем. " +
+//                "ИспользуйтеStringBuilder." +
+//                "\n\nРешение: ");
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите дату в формате 'yyyy-MM-dd', например, 2011-01-18: ");
+//        StringBuilder inputDate = new StringBuilder(scanner.nextLine());
+////        System.out.println("Исходная строка: \"" + inputDate + "\"");
+//        System.out.println("Исходная дата: " + inputDate);
+//
+//        String inStr = inputDate.toString();
+////        System.out.println("Было: " + inStr);
+//        Date date = new SimpleDateFormat("yyyy-MM-dd").parse(inStr);
+//        String outStr = new SimpleDateFormat("dd/MM/yyyy").format(date);
+//        System.out.println("Дата, полученная в результате: " + outStr); // 18/01/2011
+//
+//        StringBuilder inputPageURL = new StringBuilder("https://cbr.ru/scripts/XML_dynamic.asp?date_req1=01/11/2021&date_req2=13/11/2021&VAL_NM_RQ=R01235");
+//        String inputPageStr = inputPageURL.toString();
+//
+//        int startIndexInputPageURL1 = inputPageURL.lastIndexOf("date_req1=") + 10;
+//        int endIndexInputPageURL1 = inputPageURL.lastIndexOf("&date_req2=");
+//        System.out.println(startIndexInputPageURL1);
+//        System.out.println(endIndexInputPageURL1);
+//        String substring1 = inputPageStr.substring(startIndexInputPageURL1, endIndexInputPageURL1);
+//        System.out.println(substring1);
+//
+//        int startIndexInputPageURL2 = inputPageURL.lastIndexOf("&date_req2=") + 11;
+//        int endIndexInputPageURL2 = inputPageURL.lastIndexOf("&VAL");
+//        System.out.println(startIndexInputPageURL2);
+//        System.out.println(endIndexInputPageURL2);
+//        String substring2 = inputPageStr.substring(startIndexInputPageURL2, endIndexInputPageURL2);
+//        System.out.println(substring2);
+//
+//
+//
+//
+//        StringBuilder outputPageURL1 = inputPageURL.replace(startIndexInputPageURL1, endIndexInputPageURL1, outStr);
+////        System.out.println(outputPageURL1);
+//        StringBuilder outputPageURLFinish = outputPageURL1.replace(startIndexInputPageURL2, endIndexInputPageURL2, outStr);
+//        System.out.println(outputPageURLFinish);
+//
+//        String page = downloadWebPage(outputPageURLFinish.toString());
+////        System.out.println(page);
+//        int startIndex = page.lastIndexOf("<Value>");
+//        int endIndex = page.lastIndexOf("</Value>");
+////        System.out.println(startIndex);
+////        System.out.println(endIndex);
+////        System.out.println(page.substring(startIndex + 7, endIndex));
+//        String courseStr = page.substring(startIndex + 7, endIndex);
+//        System.out.println(courseStr);
+//
+////// видео мин 0 54 10 - Теперь давайте выведем курс за два разных дня
+////        String page1 = downloadWebPage("https://cbr.ru/scripts/XML_dynamic.asp?date_req1=01/11/2021&date_req2=13/11/2021&VAL_NM_RQ=R01235");
+//////        System.out.println(page);
+////        int startIndex1 = page.lastIndexOf("<Value>");
+////        int endIndex1 = page.lastIndexOf("</Value>");
+//////        System.out.println(startIndex);
+//////        System.out.println(endIndex);
+//////        System.out.println(page.substring(startIndex + 7, endIndex));
+////        String courseStr1 = page.substring(startIndex1 + 7, endIndex1);
+////
+////        String page2 = downloadWebPage("https://cbr.ru/scripts/XML_dynamic.asp?date_req1=01/11/2020&date_req2=13/11/2020&VAL_NM_RQ=R01235");
+//////        System.out.println(page);
+////        int startIndex2 = page.lastIndexOf("<Value>");
+////        int endIndex2 = page.lastIndexOf("</Value>");
+//////        System.out.println(startIndex);
+//////        System.out.println(endIndex);
+//////        System.out.println(page.substring(startIndex + 7, endIndex));
+////        String courseStr2 = page.substring(startIndex2 + 7, endIndex2);
+//
+//    }
+//    private static String downloadWebPage(String url) throws IOException {
+//        StringBuilder result = new StringBuilder();
+//        String line;
+//        URLConnection urlConnection = new URL(url).openConnection();
+//        try (InputStream is = urlConnection.getInputStream();
+//             BufferedReader br = new BufferedReader(new InputStreamReader(is))) {
+//            while ((line = br.readLine()) != null) {
+//                result.append(line);
+//            }
+//        }
+//        return result.toString();
+//
+//
+//    }
+//}
+////        Конец Примера 4 ККККККККККККККК
 
 
 
