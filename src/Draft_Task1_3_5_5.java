@@ -16,7 +16,6 @@ public class Draft_Task1_3_5_5 {
             if (builder.charAt(i) == ' ') {
                 builderNew.insert(i+1, ", так сказать, ");
                 builderNew.deleteCharAt(i);
-
             }
         }
         System.out.println("Итоговая строка: \"" + builderNew + "\"");
