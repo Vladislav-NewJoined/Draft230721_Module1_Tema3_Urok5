@@ -2,26 +2,21 @@ import java.util.Scanner;
 
 
 //        Пример _ ППППППППППППППППППППППППППППППППППП
-public class Draft_Task1_3_5_4 {
+public class Draft_Task1_3_5_3 {
     public static void main(String[] args) {
-        System.out.println("Задание: \n4.  Пользователь вводит пять слов, соберите из них целую строку, между " +
-                "каждым словом вставьте «, и»\n\nРешение: ");
+        System.out.println("Задание: \n3.  Пользователь вводит слово. Добавьте к нему в начало «вы говорите" +
+                ":» ... слово пользователя. И в конец: «.. и что?»\n\nРешение: ");
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Введите пять слов поочередно: ");
+        System.out.print("Введите слово: ");
 
-        StringBuilder inputBuilder = new StringBuilder();
-        for (int i = 0; i < 5; i++) {
-            System.out.print("Введите слово " + (i + 1) + ": ");
-            inputBuilder = new StringBuilder(inputBuilder + scanner.nextLine() + " ");
-        }
+        StringBuilder inputBuilder = new StringBuilder(scanner.nextLine());
+        inputBuilder.insert(0, "вы говорите, ");
 
-        String inputPr = String.valueOf(inputBuilder);
-        String input = inputPr.trim();
-        System.out.println("Исходная строка: " + input);
-
-        String result = input.replaceAll("\\s", ", и ");
-        System.out.println("Результат: " + result);
+        String str = inputBuilder.toString();
+        inputBuilder = inputBuilder.append(", и что?");
+        String str2 = inputBuilder.toString();
+        System.out.println("Результат: " + str2);
     }
 }
 //        Конец Примера _ КККККККККККККККК
@@ -32,7 +27,7 @@ public class Draft_Task1_3_5_4 {
 
 
 ////        Пример 3 ППППППППППППППППППППППППППППППППППП
-//public class Draft_Task1_3_5_4 {
+//public class Draft_Task1_3_5_3 {
 //    public static void main(String[] args) {
 //        System.out.println("Задание: \n4.  Пользователь вводит пять слов, соберите из них целую строку, между " +
 //                "каждым словом вставьте «, и»\n\nРешение: ");
@@ -74,7 +69,7 @@ public class Draft_Task1_3_5_4 {
 
 
 ////        Пример 2 ППППППППППППППППППППППППППППППППППП
-//public class Draft_Task1_3_5_4 {
+//public class Draft_Task1_3_5_3 {
 //    public static void main(String[] args) {
 //        System.out.println("Задание: \n4.  Пользователь вводит пять слов, соберите из них целую строку, между " +
 //                "каждым словом вставьте «, и»\n\nРешение: ");
@@ -101,7 +96,7 @@ public class Draft_Task1_3_5_4 {
 
 
 ////        Пример 1 ППППППППППППППППППППППППППППППППППП
-//public class Draft_Task1_3_5_4 {
+//public class Draft_Task1_3_5_3 {
 //    public static void main(String[] args) {
 //        System.out.println("Задание: \n4.  Пользователь вводит пять слов, соберите из них целую строку, между " +
 //                "каждым словом вставьте «, и»\n\nРешение: ");

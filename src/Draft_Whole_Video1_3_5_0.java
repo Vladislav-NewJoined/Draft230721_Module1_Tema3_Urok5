@@ -46,8 +46,32 @@ public class Draft_Whole_Video1_3_5_0 {
 
 
 
+
 ////        Пример _ ППППППППППППППППППППППППППППППППППП
-//public class Draft_Task1_3_5_4 {
+//public class Draft_Task1_3_5_3 {
+//    public static void main(String[] args) {
+//        System.out.println("Задание: \n3.  Пользователь вводит слово. Добавьте к нему в начало «вы говорите" +
+//                ":» ... слово пользователя. И в конец: «.. и что?»\n\nРешение: ");
+//
+//        Scanner scanner = new Scanner(System.in);
+//        System.out.print("Введите слово: ");
+//
+//        StringBuilder inputBuilder = new StringBuilder(scanner.nextLine());
+//        inputBuilder.insert(0, "вы говорите, ");
+//
+//        String str = inputBuilder.toString();
+//        inputBuilder = inputBuilder.append(", и что?");
+//        String str2 = inputBuilder.toString();
+//        System.out.println("Результат: " + str2);
+//    }
+//}
+////        Конец Примера _ КККККККККККККККК
+
+
+
+
+////        Пример _ ППППППППППППППППППППППППППППППППППП
+//public class Draft_Task1_3_5_3 {
 //    public static void main(String[] args) {
 //        System.out.println("Задание: \n4.  Пользователь вводит пять слов, соберите из них целую строку, между " +
 //                "каждым словом вставьте «, и»\n\nРешение: ");
